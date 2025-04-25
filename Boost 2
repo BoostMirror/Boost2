@@ -28,7 +28,6 @@ soundboard/
     </div>
     <!-- Add more cards here -->
   </div>
-
   <audio id="audioPlayer"></audio>
   <script src="script.js"></script>
 </body>
@@ -39,11 +38,9 @@ body {
   text-align: center;
   padding: 2rem;
 }
-
 h1 {
   color: #333;
 }
-
 .soundboard {
   display: flex;
   justify-content: center;
@@ -51,7 +48,6 @@ h1 {
   gap: 2rem;
   margin-top: 2rem;
 }
-
 .card {
   cursor: pointer;
   width: 200px;
@@ -61,17 +57,14 @@ h1 {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
 }
-
 .card:hover {
   transform: scale(1.05);
 }
-
 .card img {
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
 }
-
 .card p {
   margin-top: 0.5rem;
   font-weight: bold;
