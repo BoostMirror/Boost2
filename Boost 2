@@ -1,0 +1,84 @@
+soundboard/
+├── index.html
+├── styles.css
+├── script.js
+├── media/
+│   ├── mom.jpg
+│   ├── mom.mp3
+│   ├── dad.jpg
+│   ├── dad.mp3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Family Soundboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Tap to Hear a Loved One 💖</h1>
+  <div class="soundboard">
+    <div class="card" onclick="playSound('mom')">
+      <img src="media/mom.jpg" alt="Mom">
+      <p>Mom</p>
+    </div>
+    <div class="card" onclick="playSound('dad')">
+      <img src="media/dad.jpg" alt="Dad">
+      <p>Dad</p>
+    </div>
+    <!-- Add more cards here -->
+  </div>
+
+  <audio id="audioPlayer"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  color: #333;
+}
+
+.soundboard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  cursor: pointer;
+  width: 200px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+function playSound(name) {
+  const audio = document.getElementById('audioPlayer');
+  audio.src = `media/${name}.mp3`;
+  audio.play();
+}
